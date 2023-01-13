@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - run: |
+          printenv FORK
+
+workflows:
+  main:
+    jobs:
+      - build:
+          context:
+            - spoon-and-fork
